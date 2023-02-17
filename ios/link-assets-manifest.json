@@ -1,0 +1,13 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/Fonts/TWKEverett-Bold.ttf",
+      "sha1": "6960e2206aa63a9ed0d0939f90069a15c0a7519e"
+    },
+    {
+      "path": "src/assets/Fonts/TWKEverett-Regular.ttf",
+      "sha1": "238062222f1d257fc5d65de58e1f48b920fd7511"
+    }
+  ]
+}

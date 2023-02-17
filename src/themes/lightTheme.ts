@@ -1,0 +1,143 @@
+import {ThemePropertiesType} from '../types';
+
+export const lightTheme: ThemePropertiesType = {
+  colors: {
+    primary: '#FF4D00',
+    onPrimary: '#FFFFFF',
+    primaryContainer: '#FFDBCC',
+    onPrimaryContainer: '#1A0800',
+    secondary: '#FF7133',
+    onSecondary: '#FFFFFF',
+    secondaryContainer: '#FFDBCC',
+    onSecondaryContainer: '#1A0800',
+    tertiary: '',
+    onTertiary: '',
+    tertiaryContainer: '',
+    onTertiaryContainer: '',
+    error: '#D52121',
+    onError: '#FFFFFF',
+    errorContainer: '#F2BCBC',
+    onErrorContainer: '#150303',
+    success: '#2C6E49',
+    onSuccess: '#FFFFFF',
+    successContainer: '#C0D3C8',
+    onSuccessContainer: '#040B07',
+    background: '#F2EFED',
+    onBackground: '#181818',
+    surface: '#F2EFED',
+    onSurface: '#181818',
+    surfaceVariant: '#FCFCFB',
+    onSurfaceVariant: '#30302F',
+    outline: '#61605F',
+  },
+  elevation: {
+    surface: '#F2EFED',
+    surface1: '#F3E7E1',
+    surface2: '#F3E2DA',
+    surface3: '#F3DDD3',
+    surface4: '#F4DBD0',
+    surface5: '#F4D8CC',
+  },
+  typography: {
+    display: {
+      small: {
+        fontFamily: 'TWKEverret-Regular',
+        fontWeight: '400',
+        lineHeight: 44,
+        fontSize: 36,
+      },
+      medium: {
+        fontFamily: 'TWKEverret-Regular',
+        fontWeight: '400',
+        lineHeight: 52,
+        fontSize: 45,
+      },
+      large: {
+        fontFamily: 'TWKEverret-Regular',
+        fontWeight: '400',
+        lineHeight: 64,
+        fontSize: 57,
+      },
+    },
+    headline: {
+      small: {
+        fontFamily: 'TWKEverret-Regular',
+        fontWeight: '400',
+        lineHeight: 32,
+        fontSize: 24,
+      },
+      medium: {
+        fontFamily: 'TWKEverret-Regular',
+        fontWeight: '400',
+        lineHeight: 36,
+        fontSize: 28,
+      },
+      large: {
+        fontFamily: 'TWKEverret-Regular',
+        fontWeight: '400',
+        lineHeight: 40,
+        fontSize: 32,
+      },
+    },
+    title: {
+      small: {
+        fontFamily: 'TWKEverret-Regular',
+        fontWeight: '400',
+        lineHeight: 20,
+        fontSize: 14,
+      },
+      medium: {
+        fontFamily: 'TWKEverret-Regular',
+        fontWeight: '400',
+        lineHeight: 24,
+        fontSize: 16,
+      },
+      large: {
+        fontFamily: 'TWKEverret-Regular',
+        fontWeight: '400',
+        lineHeight: 28,
+        fontSize: 22,
+      },
+    },
+    body: {
+      small: {
+        fontFamily: 'TWKEverret-Regular',
+        fontWeight: '400',
+        lineHeight: 16,
+        fontSize: 12,
+      },
+      medium: {
+        fontFamily: 'TWKEverret-Regular',
+        fontWeight: '400',
+        lineHeight: 20,
+        fontSize: 14,
+      },
+      large: {
+        fontFamily: 'TWKEverret-Regular',
+        fontWeight: '400',
+        lineHeight: 16,
+        fontSize: 24,
+      },
+    },
+    label: {
+      small: {
+        fontFamily: 'TWKEverret-Regular',
+        fontWeight: '400',
+        lineHeight: 16,
+        fontSize: 11,
+      },
+      medium: {
+        fontFamily: 'TWKEverret-Regular',
+        fontWeight: '400',
+        lineHeight: 16,
+        fontSize: 12,
+      },
+      large: {
+        fontFamily: 'TWKEverret-Regular',
+        fontWeight: '400',
+        lineHeight: 20,
+        fontSize: 14,
+      },
+    },
+  },
+};
