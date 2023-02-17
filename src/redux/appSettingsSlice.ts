@@ -3,7 +3,7 @@ import {AppCurrencies, AppLanguages, appThemeNames} from '../constants';
 import {AppSettingsStateType, KeySettingsType} from '../types/reduxStoreTypes';
 
 const initialState: AppSettingsStateType = {
-  appActiveTheme: 'dark',
+  appActiveTheme: 'light',
   appActiveLanguage: {id: 'en', name: 'English'},
   appActiveCurrency: {id: 'USD', name: 'US Dollar'},
   appLastOpened: 0,

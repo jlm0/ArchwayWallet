@@ -8,6 +8,8 @@ import {
   SupportedNetworksType,
 } from '../types';
 
+import {Archway} from './networks/';
+
 export {TermsAndConditions};
 
 export {CommonPasswordList};

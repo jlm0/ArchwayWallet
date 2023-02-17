@@ -1,34 +1,33 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  Text,
-  View,
-  Image,
-  StyleSheet,
-  StatusBar,
-} from 'react-native';
 
-import ArchwayLogo from './assets/AppLogos/ArchwayBrandmark.png';
+import {store, persistor} from './redux/store';
+import {Provider as ReduxProvider} from 'react-redux';
+import {PersistGate as ReduxPersistProvider} from 'redux-persist/integration/react';
+import {NavigationContainer as NavigationProvider} from '@react-navigation/native';
+import {NavigatorTheme, ThemeProvider} from './themes';
+import {BottomSheetModalProvider} from '@gorhom/bottom-sheet';
+import {GestureHandlerRootView as GestureHandlerProvider} from 'react-native-gesture-handler';
 
-function App(): JSX.Element {
+import {i18nInit} from './i18n';
+
+const onBeforeLift = async () => {
+  await i18nInit(store.getState().appSettings.appActiveLanguage.id);
+};
+
+const App = () => {
   return (
-    <SafeAreaView style={{backgroundColor: 'white', flex: 1}}>
-      <StatusBar backgroundColor={'#FF4D00'} />
-      <View
-        style={{
-          backgroundColor: '#FF4D00',
-          flex: 1,
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
-        <Image source={ArchwayLogo} />
-        <Text style={{color: 'white', fontSize: 24}}>Hello World</Text>
-      </View>
-    </SafeAreaView>
+    <ReduxProvider store={store}>
+      <ReduxPersistProvider persistor={persistor} onBeforeLift={onBeforeLift}>
+        <ThemeProvider>
+          <NavigationProvider theme={NavigatorTheme}>
+            <GestureHandlerProvider style={{flex: 1}}>
+              <BottomSheetModalProvider></BottomSheetModalProvider>
+            </GestureHandlerProvider>
+          </NavigationProvider>
+        </ThemeProvider>
+      </ReduxPersistProvider>
+    </ReduxProvider>
   );
-}
-
-const styles = StyleSheet.create({});
+};
 
 export default App;
