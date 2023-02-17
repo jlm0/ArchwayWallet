@@ -13,7 +13,7 @@ class MainComponentsRegistry
  public:
   // Adapt it to the package you used for your Java class.
   constexpr static auto kJavaDescriptor =
-      "Lcom/archwaywallet/newarchitecture/components/MainComponentsRegistry;";
+      "Lcom/kryptic/archwaywallet/newarchitecture/components/MainComponentsRegistry;";
 
   static void registerNatives();
 
