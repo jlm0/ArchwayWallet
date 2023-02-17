@@ -1,4 +1,3 @@
-export {lightTheme} from './lightTheme';
 import React, {
   createContext,
   useContext,
@@ -38,5 +37,3 @@ export const NavigatorTheme = {
     background: 'transparent',
   },
 };
-
-export {darkTheme} from './darkTheme';

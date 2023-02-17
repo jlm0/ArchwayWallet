@@ -29,7 +29,6 @@ export const darkTheme: ThemePropertiesType = {
     surfaceVariant: '',
     onSurfaceVariant: '',
     outline: '',
-    outlineVariant: '',
   },
   elevation: {
     surface: '',

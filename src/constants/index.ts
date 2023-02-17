@@ -1,4 +1,4 @@
-import {darkTheme, lightTheme} from '../themes';
+import {lightTheme} from '../themes/lightTheme';
 import CommonPasswordList from './CommonPasswords.json';
 import TermsAndConditions from './TermsAndConditions';
 import {
