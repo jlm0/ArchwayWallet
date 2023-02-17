@@ -1,4 +1,4 @@
-package com.archwaywallet.newarchitecture;
+package com.kryptic.archwaywallet.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.fabric.ReactNativeConfig;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.archwaywallet.BuildConfig;
-import com.archwaywallet.newarchitecture.components.MainComponentsRegistry;
-import com.archwaywallet.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.kryptic.archwaywallet.BuildConfig;
+import com.kryptic.archwaywallet.newarchitecture.components.MainComponentsRegistry;
+import com.kryptic.archwaywallet.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 
