@@ -115,8 +115,8 @@ export const lightTheme: ThemePropertiesType = {
       large: {
         fontFamily: 'TWKEverret-Regular',
         fontWeight: '400',
-        lineHeight: 16,
-        fontSize: 24,
+        lineHeight: 24,
+        fontSize: 16,
       },
     },
     label: {

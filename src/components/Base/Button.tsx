@@ -1,8 +1,9 @@
 import React from 'react';
-import {Text, StyleSheet} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {useTheme} from '../../themes';
 import {ThemePropertiesType} from '../../types';
 import Pressable from './Pressable';
+import {Text} from './Text';
 
 export type ButtonPropsType = {
   children: string;
@@ -59,7 +60,9 @@ export const Button = ({
       onPressOut={() => setIsPressed(false)}
       style={[styles(theme).button, buttonStyle]}
       onPress={onPress}>
-      <Text style={[styles(theme).text, textStyle]}>{children}</Text>
+      <Text type="label" size="large" color={textStyle.color}>
+        {children}
+      </Text>
     </Pressable>
   );
 };

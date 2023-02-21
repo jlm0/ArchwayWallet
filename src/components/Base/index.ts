@@ -6,3 +6,4 @@ export * from './Modal';
 export * from './Snackbar';
 export * from './Switch';
 export * from './Pressable';
+export * from './Text';
