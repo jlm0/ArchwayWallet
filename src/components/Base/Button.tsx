@@ -49,13 +49,40 @@ export const Button = ({
       textStyle = styles(theme).primaryText;
   }
   if (isPressed) {
-    buttonStyle = [buttonStyle, styles(theme).buttonPressed];
+    buttonStyle = {...buttonStyle, ...styles(theme).buttonPressed};
   }
   if (fullWidth) {
-    buttonStyle = [buttonStyle, styles(theme).fullWidthButton];
+    buttonStyle = {...buttonStyle, ...styles(theme).fullWidthButton};
+  }
+  if (disabled) {
+    switch (type) {
+      case 'primary':
+        buttonStyle = {...buttonStyle, ...styles(theme).primaryButtonDisabled};
+        textStyle = {...textStyle, ...styles(theme).primaryTextDisabled};
+        break;
+      case 'secondary':
+        buttonStyle = {
+          ...buttonStyle,
+          ...styles(theme).secondaryButtonDisabled,
+        };
+        textStyle = {...textStyle, ...styles(theme).secondaryTextDisabled};
+        break;
+      case 'outline':
+        buttonStyle = {...buttonStyle, ...styles(theme).outlineButtonDisabled};
+        textStyle = {...textStyle, ...styles(theme).outlineTextDisabled};
+        break;
+      case 'text':
+        buttonStyle = {...buttonStyle, ...styles(theme).textButtonDisabled};
+        textStyle = {...textStyle, ...styles(theme).textTextDisabled};
+        break;
+      default:
+        buttonStyle = {...buttonStyle, ...styles(theme).primaryButtonDisabled};
+        textStyle = {...textStyle, ...styles(theme).primaryTextDisabled};
+    }
   }
   return (
     <Pressable
+      disabled={disabled}
       onPressIn={() => setIsPressed(true)}
       onPressOut={() => setIsPressed(false)}
       style={[styles(theme).button, buttonStyle]}
@@ -97,11 +124,25 @@ const styles = (theme: ThemePropertiesType) =>
     primaryText: {
       color: theme.colors.onPrimary,
     },
+    primaryButtonDisabled: {
+      backgroundColor: theme.colors.onSurface,
+      opacity: 0.2,
+    },
+    primaryTextDisabled: {
+      color: theme.colors.onSurface,
+    },
     secondaryButton: {
       backgroundColor: theme.colors.secondaryContainer,
     },
     secondaryText: {
       color: theme.colors.onSecondaryContainer,
+    },
+    secondaryButtonDisabled: {
+      backgroundColor: theme.colors.onSurface,
+      opacity: 0.14,
+    },
+    secondaryTextDisabled: {
+      color: theme.colors.onSurface,
     },
     outlineButton: {
       backgroundColor: 'transparent',
@@ -111,10 +152,23 @@ const styles = (theme: ThemePropertiesType) =>
     outlineText: {
       color: theme.colors.primary,
     },
+    outlineButtonDisabled: {
+      borderColor: theme.colors.onSurface,
+      opacity: 0.14,
+    },
+    outlineTextDisabled: {
+      color: theme.colors.onSurface,
+    },
     textButton: {
       backgroundColor: 'transparent',
     },
     textText: {
       color: theme.colors.primary,
+    },
+    textButtonDisabled: {
+      opacity: 0.14,
+    },
+    textTextDisabled: {
+      color: theme.colors.onSurface,
     },
   });
