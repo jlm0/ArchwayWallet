@@ -7,8 +7,8 @@ import {NavigationContainer as NavigationProvider} from '@react-navigation/nativ
 import {NavigatorTheme, ThemeProvider} from './themes';
 import {BottomSheetModalProvider} from '@gorhom/bottom-sheet';
 import {GestureHandlerRootView as GestureHandlerProvider} from 'react-native-gesture-handler';
-
 import {i18nInit} from './i18n';
+import {BaseNavigator} from './routes';
 
 const onBeforeLift = async () => {
   await i18nInit(store.getState().appSettings.appActiveLanguage.id);
@@ -21,7 +21,9 @@ const App = () => {
         <ThemeProvider>
           <NavigationProvider theme={NavigatorTheme}>
             <GestureHandlerProvider style={{flex: 1}}>
-              <BottomSheetModalProvider></BottomSheetModalProvider>
+              <BottomSheetModalProvider>
+                <BaseNavigator />
+              </BottomSheetModalProvider>
             </GestureHandlerProvider>
           </NavigationProvider>
         </ThemeProvider>
