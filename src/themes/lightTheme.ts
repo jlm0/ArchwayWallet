@@ -41,19 +41,19 @@ export const lightTheme: ThemePropertiesType = {
   typography: {
     display: {
       small: {
-        fontFamily: 'TWKEverret-Regular',
+        fontFamily: 'TWKEverett-Regular',
         fontWeight: '400',
         lineHeight: 44,
         fontSize: 36,
       },
       medium: {
-        fontFamily: 'TWKEverret-Regular',
+        fontFamily: 'TWKEverett-Regular',
         fontWeight: '400',
         lineHeight: 52,
         fontSize: 45,
       },
       large: {
-        fontFamily: 'TWKEverret-Regular',
+        fontFamily: 'TWKEverett-Regular',
         fontWeight: '400',
         lineHeight: 64,
         fontSize: 57,
@@ -61,19 +61,19 @@ export const lightTheme: ThemePropertiesType = {
     },
     headline: {
       small: {
-        fontFamily: 'TWKEverret-Regular',
+        fontFamily: 'TWKEverett-Regular',
         fontWeight: '400',
         lineHeight: 32,
         fontSize: 24,
       },
       medium: {
-        fontFamily: 'TWKEverret-Regular',
+        fontFamily: 'TWKEverett-Regular',
         fontWeight: '400',
         lineHeight: 36,
         fontSize: 28,
       },
       large: {
-        fontFamily: 'TWKEverret-Regular',
+        fontFamily: 'TWKEverett-Regular',
         fontWeight: '400',
         lineHeight: 40,
         fontSize: 32,
@@ -81,19 +81,19 @@ export const lightTheme: ThemePropertiesType = {
     },
     title: {
       small: {
-        fontFamily: 'TWKEverret-Regular',
+        fontFamily: 'TWKEverett-Regular',
         fontWeight: '400',
         lineHeight: 20,
         fontSize: 14,
       },
       medium: {
-        fontFamily: 'TWKEverret-Regular',
+        fontFamily: 'TWKEverett-Regular',
         fontWeight: '400',
         lineHeight: 24,
         fontSize: 16,
       },
       large: {
-        fontFamily: 'TWKEverret-Regular',
+        fontFamily: 'TWKEverett-Regular',
         fontWeight: '400',
         lineHeight: 28,
         fontSize: 22,
@@ -101,19 +101,19 @@ export const lightTheme: ThemePropertiesType = {
     },
     body: {
       small: {
-        fontFamily: 'TWKEverret-Regular',
+        fontFamily: 'TWKEverett-Regular',
         fontWeight: '400',
         lineHeight: 16,
         fontSize: 12,
       },
       medium: {
-        fontFamily: 'TWKEverret-Regular',
+        fontFamily: 'TWKEverett-Regular',
         fontWeight: '400',
         lineHeight: 20,
         fontSize: 14,
       },
       large: {
-        fontFamily: 'TWKEverret-Regular',
+        fontFamily: 'TWKEverett-Regular',
         fontWeight: '400',
         lineHeight: 24,
         fontSize: 16,
@@ -121,19 +121,19 @@ export const lightTheme: ThemePropertiesType = {
     },
     label: {
       small: {
-        fontFamily: 'TWKEverret-Regular',
+        fontFamily: 'TWKEverett-Regular',
         fontWeight: '400',
         lineHeight: 16,
         fontSize: 11,
       },
       medium: {
-        fontFamily: 'TWKEverret-Regular',
+        fontFamily: 'TWKEverett-Regular',
         fontWeight: '400',
         lineHeight: 16,
         fontSize: 12,
       },
       large: {
-        fontFamily: 'TWKEverret-Regular',
+        fontFamily: 'TWKEverett-Regular',
         fontWeight: '400',
         lineHeight: 20,
         fontSize: 14,
