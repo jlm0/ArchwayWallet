@@ -8,11 +8,20 @@ type TextProps = {
   color: string;
   type: ThemeTypographyTypes[number];
   size: ThemeTypographySize[number];
+  textAlign?: 'center' | 'left' | 'right';
 };
 
-export const Text = ({children, color, type, size}: TextProps) => {
+export const Text = ({
+  children,
+  color = '#000000',
+  type = 'body',
+  size = 'large',
+  textAlign = 'center',
+}: TextProps) => {
   const theme = useTheme();
   return (
-    <RNText style={{...theme.typography[type][size], color}}>{children}</RNText>
+    <RNText style={{...theme.typography[type][size], color, textAlign}}>
+      {children}
+    </RNText>
   );
 };
