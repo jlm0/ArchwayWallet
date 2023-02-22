@@ -1,9 +1,9 @@
 import React from 'react';
-import {StyleSheet, Pressable} from 'react-native';
+import {StyleSheet} from 'react-native';
 import CheckIcon from '../../assets/Icons/Check.svg';
 import {useTheme} from '../../themes';
 import {ThemePropertiesType} from '../../types';
-
+import Pressable from './Pressable';
 type CheckboxProps = {
   initialValue: boolean;
   onValueChange: React.Dispatch<React.SetStateAction<boolean>>;
