@@ -1,4 +1,33 @@
 {
-  "translation": {},
-  "global": {}
+  "translation": {
+    "SetupOnboard": {
+      "button": "Empezar",
+      "slide1": {
+        "title": "Bienvenido a Archway Wallet",
+        "subtitle": "Una nueva y vanguardista cartera que combina el más alto nivel de protección con un diseño moderno y elegante que te da un control completo sobre tus activos digitales."
+      },
+      "slide2": {
+        "title": "Recompensando a los arquitectos de Web3",
+        "subtitle": "Archway asegura que los desarrolladores de dapps reciban su parte justa de recompensas e incentivos al incluir recompensas a nivel de red directamente en el propio protocolo."
+      },
+      "slide3": {
+        "title": "Plataforma de lanzamiento al Multichain",
+        "subtitle": "Construido en Cosmos, el protocolo permite que las dapps se conecten directamente a un vasto ecosistema multi-chain, alcanzando a tantos usuarios y activos como sea posible."
+      }
+    }
+  },
+  "global": {
+    "buttons": {
+      "back": "Atrás",
+      "next": "Siguiente",
+      "continue": "Continuar",
+      "save": "Guardar",
+      "cancel": "Cancelar",
+      "confirm": "Confirmar",
+      "close": "Cerrar",
+      "finish": "Finalizar",
+      "success": "Éxito",
+      "advanced": "Avanzado"
+    }
+  }
 }
