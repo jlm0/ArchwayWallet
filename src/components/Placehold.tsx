@@ -36,7 +36,7 @@ export const Placeholder = ({route}) => {
         {route.name}
       </Text>
 
-      <Text color={theme.colors.onBackground} size="large" type="display">
+      {/* <Text color={theme.colors.onBackground} size="large" type="display">
         Large Display
       </Text>
       <Text color={theme.colors.onBackground} size="medium" type="display">
@@ -226,7 +226,7 @@ export const Placeholder = ({route}) => {
         placeholder="Password Input"
         label="Password Input"
         LeftIcon={CoffeeIcon}
-      />
+      /> */}
     </ScrollView>
   );
 };

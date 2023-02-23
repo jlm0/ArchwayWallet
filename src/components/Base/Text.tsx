@@ -18,6 +18,7 @@ type TextProps = {
   paddingLeft?: string | number;
   paddingRight?: string | number;
   backgroundColor?: string;
+  textTransform?: 'none' | 'capitalize' | 'uppercase' | 'lowercase';
 };
 
 export const Text = ({
@@ -35,6 +36,7 @@ export const Text = ({
   paddingLeft,
   paddingRight,
   backgroundColor,
+  textTransform,
 }: TextProps) => {
   const theme = useTheme();
   return (
@@ -52,6 +54,7 @@ export const Text = ({
         paddingLeft,
         paddingRight,
         backgroundColor,
+        textTransform,
       }}>
       {children}
     </RNText>
