@@ -25,6 +25,7 @@ export const TextField: React.FC<Props> = ({
   placeholder,
   LeftIcon,
   marginBottom,
+  onChangeText,
 }) => {
   const theme = useTheme();
   const [secureTextEntry, setSecureTextEntry] = useState<boolean>(isPassword);
@@ -57,6 +58,7 @@ export const TextField: React.FC<Props> = ({
           />
         )}
         <TextInput
+          onChangeText={onChangeText}
           placeholder={placeholder}
           style={[styles(theme).input]}
           secureTextEntry={secureTextEntry}
