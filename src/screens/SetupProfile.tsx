@@ -103,7 +103,10 @@ const SetupProfile = ({navigation, route}: SetupProfileScreenProps) => {
         />
         {/* <TagsSelector setAccountTags={setAccountTags} /> */}
       </KeyboardAwareScrollView>
-      <Button type="primary" onPress={handleContinuePress}>
+      <Button
+        disabled={!accountName}
+        type="primary"
+        onPress={handleContinuePress}>
         {t('buttons.continue', {ns: 'global'})}
       </Button>
     </Background>
