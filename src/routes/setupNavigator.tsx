@@ -4,6 +4,7 @@ import {Placeholder} from '../components';
 import {useAppSelector} from '../redux';
 import {SetupOnboard} from '../screens';
 import {SetupOptions} from '../screens/SetupOptions';
+import SetupProfile from '../screens/SetupProfile';
 import {SetupNavigatorType} from '../types';
 
 const SetupStack = createStackNavigator<SetupNavigatorType>();
@@ -18,7 +19,7 @@ export const SetupNavigator = () => {
         <SetupStack.Screen name="SetupOnboard" component={SetupOnboard} />
       )}
       <SetupStack.Screen name="SetupOptions" component={SetupOptions} />
-      <SetupStack.Screen name="SetupProfile" component={Placeholder} />
+      <SetupStack.Screen name="SetupProfile" component={SetupProfile} />
       <SetupStack.Screen name="SetupSeedCreate" component={Placeholder} />
       <SetupStack.Screen name="SetupSeedConfirm" component={Placeholder} />
       <SetupStack.Screen name="SetupSeedImport" component={Placeholder} />

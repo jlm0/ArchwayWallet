@@ -21,6 +21,14 @@
       "newAccount": "Crear Nueva Cuenta",
       "importSeed": "Importar Desde la Semilla",
       "importLedger": "Importar Desde el Ledger"
+    },
+    "SetupProfile": {
+      "title": "Detalles de la Cuenta",
+      "subtitle": "Seleccione una Imagen de Avatar",
+      "nameInput": {
+        "label": "Nombre de la Cuenta",
+        "placeholder": "Introduzca el nombre"
+      }
     }
   },
   "global": {

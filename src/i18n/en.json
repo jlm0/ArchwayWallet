@@ -21,11 +21,19 @@
       "newAccount": "Create New Account",
       "importSeed": "Import From Seed",
       "importLedger": "Import From Ledger"
+    },
+    "SetupProfile": {
+      "title": "Account Details",
+      "subtitle": "Select an Avatar Image",
+      "nameInput": {
+        "label": "Account Name",
+        "placeholder": "Enter a Name"
+      }
     }
   },
   "global": {
     "buttons": {
-      "back": "back",
+      "back": "Back",
       "next": "Next",
       "continue": "Continue",
       "save": "Save",
