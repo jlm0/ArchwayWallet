@@ -40,7 +40,7 @@ export const avatarImages: AvatarImageType[] = [
 
 export const AvatarPicker = (props: AvatarPickerPropType) => {
   const theme = useTheme();
-  const {t} = useTranslation('global');
+  const {t} = useTranslation();
   const [modalVisible, setModalVisible] = useState(false);
 
   const handleAvatarImagePress = () => {
@@ -147,8 +147,8 @@ const styles = (theme: ThemePropertiesType) =>
       marginBottom: 8,
     },
     selectedAvatarImage: {
-      borderWidth: 2,
-      borderColor: theme.colors.secondary,
+      borderWidth: 3,
+      borderColor: theme.colors.primary,
     },
     modalAvatarcontainer: {
       flexDirection: 'row',
