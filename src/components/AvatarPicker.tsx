@@ -76,7 +76,8 @@ export const AvatarPicker = (props: AvatarPickerPropType) => {
       <Modal
         primaryButtonlabel={t('buttons.save', {ns: 'global'})}
         primaryButtonOnPress={() => setModalVisible(false)}
-        heading={t('SetupProfile.subtitle')}
+        heading={t('AvatarPicker.title')}
+        subheading={t('AvatarPicker.subtitle')}
         visible={modalVisible}
         setIsVisible={setModalVisible}>
         <View style={styles(theme).modalAvatarcontainer}>

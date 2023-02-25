@@ -82,7 +82,6 @@ const SetupProfile = ({navigation, route}: SetupProfileScreenProps) => {
           {t('SetupProfile.title')}
         </Text>
         <Text
-          textTransform="uppercase"
           type="title"
           size="small"
           color={theme.colors.onBackground}

@@ -25,11 +25,7 @@ export const SetupOptions = ({navigation}: SetupOptionsScreenProps) => {
             marginBottom={16}>
             {t('title')}
           </Text>
-          <Text
-            textTransform="uppercase"
-            type="title"
-            size="small"
-            color={theme.colors.onBackground}>
+          <Text type="title" size="small" color={theme.colors.onBackground}>
             {t('subtitle')}
           </Text>
         </View>

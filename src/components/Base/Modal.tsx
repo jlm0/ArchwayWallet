@@ -24,7 +24,7 @@ export const Modal = ({
   visible = false,
   setIsVisible,
   heading = 'Missing Modal Heading',
-  subheading = 'Missing modal subheading',
+  subheading,
   primaryButtonlabel = 'Modal Primary Button',
   primaryButtonOnPress,
   showSecondaryButton = false,

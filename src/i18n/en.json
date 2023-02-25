@@ -23,12 +23,16 @@
       "importLedger": "Import From Ledger"
     },
     "SetupProfile": {
-      "title": "Account Details",
-      "subtitle": "Select an Avatar Image",
+      "title": "Account Profile",
+      "subtitle": "Give your account a name and avatar.",
       "nameInput": {
         "label": "Account Name",
         "placeholder": "Enter a Name"
       }
+    },
+    "AvatarPicker": {
+      "title": "Select an Avatar",
+      "subtitle": "Your avatar will allow you easily identify your account."
     }
   },
   "global": {
