@@ -3,10 +3,10 @@ import {StyleSheet, View, Dimensions, ScrollView} from 'react-native';
 import {ReactNativeModal} from 'react-native-modal';
 import {useTheme} from '../../themes';
 import Close from '../../assets/Icons/Close.svg';
-import Pressable from './Pressable';
 import {Text} from './Text';
 import {Button} from './Button';
 import {ThemePropertiesType} from '../../types';
+import {Pressable} from './Pressable';
 
 type ModalPropsType = {
   children: React.ReactNode;
