@@ -1,14 +1,15 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
+import {SvgProps} from 'react-native-svg';
 import {useTheme} from '../../themes';
 import {ThemePropertiesType} from '../../types';
-import Pressable from './Pressable';
+import {Pressable} from './Pressable';
 import {Text} from './Text';
 
 export type ButtonPropsType = {
   children: string;
   type: 'primary' | 'secondary' | 'outline' | 'text';
-  icon?: (color: string) => React.ReactElement;
+  Icon?: React.FC<SvgProps>;
   onPress: () => void;
   disabled?: boolean;
   fullWidth?: boolean;
@@ -17,7 +18,7 @@ export type ButtonPropsType = {
 export const Button = ({
   children = 'Text',
   type = 'primary',
-  icon,
+  Icon,
   onPress,
   disabled = false,
   fullWidth = false,
@@ -87,6 +88,7 @@ export const Button = ({
       onPressOut={() => setIsPressed(false)}
       style={[styles(theme).button, buttonStyle]}
       onPress={onPress}>
+      {Icon && <Icon color={textStyle.color} style={{marginRight: 8}} />}
       <Text type="label" size="large" color={textStyle.color}>
         {children}
       </Text>

@@ -3,7 +3,7 @@ import {Pressable as Touchable, PressableProps} from 'react-native';
 import HapticFeedback from 'react-native-haptic-feedback';
 import {GestureResponderEvent} from 'react-native-modal';
 
-const Pressable = (props: PressableProps) => {
+export const Pressable = (props: PressableProps) => {
   const options = {
     enableVibrateFallback: true,
     ignoreAndroidSystemSettings: false,
@@ -20,5 +20,3 @@ const Pressable = (props: PressableProps) => {
     </Touchable>
   );
 };
-
-export default Pressable;
