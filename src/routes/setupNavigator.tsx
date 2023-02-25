@@ -3,11 +3,12 @@ import React from 'react';
 import {Placeholder} from '../components';
 import {useAppSelector} from '../redux';
 import {SetupOnboard} from '../screens';
+import {SetupOptions} from '../screens/SetupOptions';
 import {SetupNavigatorType} from '../types';
 
 const SetupStack = createStackNavigator<SetupNavigatorType>();
 
-const SetupNavigator = () => {
+export const SetupNavigator = () => {
   const isFirstTimeUser = useAppSelector(
     state => state.appSettings.isFirstTimeUser,
   );
@@ -16,7 +17,7 @@ const SetupNavigator = () => {
       {isFirstTimeUser && (
         <SetupStack.Screen name="SetupOnboard" component={SetupOnboard} />
       )}
-      <SetupStack.Screen name="SetupOptions" component={Placeholder} />
+      <SetupStack.Screen name="SetupOptions" component={SetupOptions} />
       <SetupStack.Screen name="SetupProfile" component={Placeholder} />
       <SetupStack.Screen name="SetupSeedCreate" component={Placeholder} />
       <SetupStack.Screen name="SetupSeedConfirm" component={Placeholder} />
@@ -26,5 +27,3 @@ const SetupNavigator = () => {
     </SetupStack.Navigator>
   );
 };
-
-export default SetupNavigator;

@@ -3,8 +3,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {BaseNavigatorType} from '../types';
 import {useAppSelector} from '../redux';
 import {Placeholder} from '../components';
-import SetupNavigator from './setupNavigator';
-import DrawerNavigator from './drawerNavigator';
+import {SetupNavigator} from './setupNavigator';
+import {DrawerNavigator} from './drawerNavigator';
 
 const BaseStack = createStackNavigator<BaseNavigatorType>();
 

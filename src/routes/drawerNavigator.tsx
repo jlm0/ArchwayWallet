@@ -5,7 +5,7 @@ import {Placeholder} from '../components';
 
 const DrawerMenu = createDrawerNavigator();
 
-const DrawerNavigator = () => {
+export const DrawerNavigator = () => {
   return (
     <DrawerMenu.Navigator
       initialRouteName="Wallet"
@@ -35,5 +35,3 @@ const DrawerNavigator = () => {
     </DrawerMenu.Navigator>
   );
 };
-
-export default DrawerNavigator;

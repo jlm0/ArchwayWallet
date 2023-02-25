@@ -10,7 +10,7 @@ import {Placeholder} from '../components';
 
 const HomeTab = createBottomTabNavigator();
 
-const TabsNavigator = () => {
+export const TabsNavigator = () => {
   const {dismissAll} = useBottomSheetModal();
   return (
     <HomeTab.Navigator
@@ -26,5 +26,3 @@ const TabsNavigator = () => {
     </HomeTab.Navigator>
   );
 };
-
-export default TabsNavigator;
