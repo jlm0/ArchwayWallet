@@ -75,31 +75,38 @@ export type SetupNavigatorType = {
 
 export type SetupNavigatorPropsType = StackScreenProps<SetupNavigatorType>;
 
-export type SetupOnboardScreenPropsType = StackScreenProps<
+export type SetupOnboardScreenProps = StackScreenProps<
   SetupNavigatorType,
   'SetupOnboard'
 >;
-export type SetupOptionsScreenPropsType = StackScreenProps<
+
+export type SetupOptionsScreenProps = StackScreenProps<
   SetupNavigatorType,
   'SetupOptions'
 >;
-export type SetupSeedCreateScreenPropsType = StackScreenProps<
+
+export type SetupProfileScreenProps = StackScreenProps<
   SetupNavigatorType,
   'SetupProfile'
 >;
-export type SetupSeedConfirmScreenPropsType = StackScreenProps<
+
+export type SetupSeedCreateScreenProps = StackScreenProps<
+  SetupNavigatorType,
+  'SetupSeedCreate'
+>;
+export type SetupSeedConfirmScreenProps = StackScreenProps<
   SetupNavigatorType,
   'SetupSeedConfirm'
 >;
-export type SetupSeedImport = StackScreenProps<
+export type SetupSeedImportScreenProps = StackScreenProps<
   SetupNavigatorType,
   'SetupSeedImport'
 >;
-export type SetupSecurityPropsType = StackScreenProps<
+export type SetupSecurityScreenProps = StackScreenProps<
   SetupNavigatorType,
   'SetupSecurity'
 >;
-export type SetupSuccessPropsType = StackScreenProps<
+export type SetupSuccessScreenProps = StackScreenProps<
   SetupNavigatorType,
   'SetupSuccess'
 >;

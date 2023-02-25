@@ -1,11 +1,11 @@
 import React from 'react';
 import {Image, View, StyleSheet} from 'react-native';
 import {useTranslation} from 'react-i18next';
-import {SetupOptionsScreenPropsType, ThemePropertiesType} from '../types';
+import {SetupOptionsScreenProps, ThemePropertiesType} from '../types';
 import {BackButton, Background, Pressable, Text} from '../components/';
 import {useTheme} from '../themes';
 
-export const SetupOptions = ({navigation}: SetupOptionsScreenPropsType) => {
+export const SetupOptions = ({navigation}: SetupOptionsScreenProps) => {
   const {t} = useTranslation('translation', {keyPrefix: 'SetupOptions'});
   const theme = useTheme();
 

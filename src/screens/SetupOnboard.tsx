@@ -5,7 +5,7 @@ import {Button, Text} from '../components';
 import {Background} from '../components/Background';
 import {setAppActiveLanguage, useAppDispatch, useAppSelector} from '../redux';
 import {useTheme} from '../themes';
-import {SetupOnboardScreenPropsType, ThemePropertiesType} from '../types';
+import {SetupOnboardScreenProps, ThemePropertiesType} from '../types';
 
 const {width} = Dimensions.get('window');
 
@@ -30,7 +30,7 @@ const slides = [
   },
 ];
 
-export const SetupOnboard = ({navigation}: SetupOnboardScreenPropsType) => {
+export const SetupOnboard = ({navigation}: SetupOnboardScreenProps) => {
   const {t, i18n} = useTranslation('translation', {keyPrefix: 'SetupOnboard'});
   const theme = useTheme();
   const dispatch = useAppDispatch();
