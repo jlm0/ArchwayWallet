@@ -14,6 +14,13 @@
         "title": "Launchpad Into the Multichain",
         "subtitle": "Built on Cosmos, the protocol enables dapps to plug directly into a vast multi-chain ecosystem, reaching as many users and assets as possible."
       }
+    },
+    "SetupOptions": {
+      "title": "Account Setup",
+      "subtitle": "Create a new wallet or import an existing one.",
+      "newAccount": "Create New Account",
+      "importSeed": "Import From Seed",
+      "importLedger": "Import From Ledger"
     }
   },
   "global": {

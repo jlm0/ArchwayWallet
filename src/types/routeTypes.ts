@@ -35,11 +35,41 @@ export type TabNavigatorPropsType = BottomTabScreenProps<TabNavigatorType>;
 export type SetupNavigatorType = {
   SetupOnboard: undefined;
   SetupOptions: undefined;
-  SetupProfile: undefined;
-  SetupSeedCreate: undefined;
-  SetupSeedConfirm: undefined;
-  SetupSeedImport: undefined;
-  SetupSecurity: undefined;
+  SetupProfile: {route: string};
+  SetupSeedCreate: {
+    route: string;
+    accountName: string;
+    avatarImage: AvatarImage;
+    accountTags: string[];
+  };
+  SetupSeedConfirm: {
+    route: string;
+    accountName: string;
+    avatarImage: AvatarImage;
+    hdPath: HDPathType;
+    seed: string[];
+    accountTags: string[];
+  };
+  SetupSeedImport: {
+    route: string;
+    accountName: string;
+    avatarImage: AvatarImage;
+    accountTags: string[];
+  };
+  SetupImportLedger: {
+    route: string;
+    accountName: string;
+    avatarImage: AvatarImage;
+    accountTags: string[];
+  };
+  SetupSecurity: {
+    route: string;
+    avatarImage: AvatarImage;
+    hdPath: HDPathType;
+    accountName: string;
+    seed: string[];
+    accountTags: string[];
+  };
   SetupSuccess: undefined;
 };
 
@@ -51,21 +81,25 @@ export type SetupOnboardScreenPropsType = StackScreenProps<
 >;
 export type SetupOptionsScreenPropsType = StackScreenProps<
   SetupNavigatorType,
-  'SetupOnboard'
+  'SetupOptions'
 >;
 export type SetupSeedCreateScreenPropsType = StackScreenProps<
   SetupNavigatorType,
-  'SetupOnboard'
+  'SetupProfile'
 >;
 export type SetupSeedConfirmScreenPropsType = StackScreenProps<
   SetupNavigatorType,
-  'SetupOnboard'
+  'SetupSeedConfirm'
 >;
-export type SetupSecuirtyPropsType = StackScreenProps<
+export type SetupSeedImport = StackScreenProps<
   SetupNavigatorType,
-  'SetupOnboard'
+  'SetupSeedImport'
+>;
+export type SetupSecurityPropsType = StackScreenProps<
+  SetupNavigatorType,
+  'SetupSecurity'
 >;
 export type SetupSuccessPropsType = StackScreenProps<
   SetupNavigatorType,
-  'SetupOnboard'
+  'SetupSuccess'
 >;

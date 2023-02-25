@@ -14,6 +14,13 @@
         "title": "Plataforma de lanzamiento al Multichain",
         "subtitle": "Construido en Cosmos, el protocolo permite que las dapps se conecten directamente a un vasto ecosistema multi-chain, alcanzando a tantos usuarios y activos como sea posible."
       }
+    },
+    "SetupOptions": {
+      "title": "Configuración de Cuenta",
+      "subtitle": "Crear un nuevo billetero o importar uno existente.",
+      "newAccount": "Crear Nueva Cuenta",
+      "importSeed": "Importar Desde la Semilla",
+      "importLedger": "Importar Desde el Ledger"
     }
   },
   "global": {
