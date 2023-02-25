@@ -88,7 +88,14 @@ export const Button = ({
       onPressOut={() => setIsPressed(false)}
       style={[styles(theme).button, buttonStyle]}
       onPress={onPress}>
-      {Icon && <Icon color={textStyle.color} style={{marginRight: 8}} />}
+      {Icon && (
+        <Icon
+          width={14}
+          height={14}
+          color={textStyle.color}
+          style={{marginRight: 8}}
+        />
+      )}
       <Text type="label" size="large" color={textStyle.color}>
         {children}
       </Text>
@@ -102,6 +109,7 @@ const styles = (theme: ThemePropertiesType) =>
       borderRadius: 8,
       paddingVertical: 12,
       paddingHorizontal: 16,
+      flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
       minWidth: 64,

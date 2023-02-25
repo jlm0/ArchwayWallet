@@ -20,6 +20,7 @@ export const Background = ({
         flex: 1,
         paddingHorizontal: 16,
         paddingVertical: 24,
+        justifyContent: 'space-between',
       }}>
       {children}
     </View>

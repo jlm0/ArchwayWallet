@@ -14,7 +14,7 @@ export const BackButton = ({navigation}: GoBackButtonPropType) => {
 
   return (
     <Button type="text" onPress={() => navigation.goBack()} Icon={LeftChevron}>
-      {t('back')}
+      {t('buttons.back', {ns: 'global'})}
     </Button>
   );
 };

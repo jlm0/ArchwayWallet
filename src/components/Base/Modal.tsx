@@ -16,35 +16,45 @@ type ModalPropsType = {
   subheading?: string;
   primaryButtonlabel: string;
   primaryButtonOnPress: () => void;
+  showSecondaryButton?: boolean;
 };
 const {width, height} = Dimensions.get('window');
-export const Modal = (props: ModalPropsType) => {
+export const Modal = ({
+  children,
+  visible = false,
+  setIsVisible,
+  heading = 'Missing Modal Heading',
+  subheading = 'Missing modal subheading',
+  primaryButtonlabel = 'Modal Primary Button',
+  primaryButtonOnPress,
+  showSecondaryButton = false,
+}: ModalPropsType) => {
   const theme = useTheme();
 
   const toggleModal = () => {
-    const newVisible = !props.visible;
-    props.setIsVisible(newVisible);
+    const newVisible = !visible;
+    setIsVisible(newVisible);
   };
   return (
     <ReactNativeModal
       useNativeDriver
       hideModalContentWhileAnimating
-      isVisible={props.visible}
+      isVisible={visible}
       onBackButtonPress={toggleModal}>
       <View style={styles(theme).modalContentContainer}>
         <View>
           <View style={[styles(theme).headerContainer, {marginBottom: 12}]}>
             <Text type="title" size="large" color={theme.colors.onSurface}>
-              {props.heading}
+              {heading}
             </Text>
             <Pressable onPress={toggleModal} style={styles(theme).closeButton}>
               <Close height={18} width={18} color={theme.colors.onSurface} />
             </Pressable>
           </View>
           <View style={styles(theme).headerContainer}>
-            {props.subheading && (
+            {subheading && (
               <Text type="title" size="medium" color={theme.colors.onSurface}>
-                {props.subheading}
+                {subheading}
               </Text>
             )}
           </View>
@@ -52,20 +62,20 @@ export const Modal = (props: ModalPropsType) => {
         <ScrollView
           contentContainerStyle={{flexGrow: 1}}
           style={styles(theme).bodyContainer}>
-          {props.children}
+          {children}
         </ScrollView>
         <View style={styles(theme).footerContainer}>
-          <View style={{flex: 1, marginRight: 8}}>
-            <Button fullWidth type="outline" onPress={toggleModal}>
-              Cancel
-            </Button>
-          </View>
+          {showSecondaryButton && (
+            <View style={{flex: 1, marginRight: 8}}>
+              <Button fullWidth type="outline" onPress={toggleModal}>
+                Cancel
+              </Button>
+            </View>
+          )}
+
           <View style={{flex: 1}}>
-            <Button
-              fullWidth
-              type="primary"
-              onPress={props.primaryButtonOnPress}>
-              {props.primaryButtonlabel}
+            <Button fullWidth type="primary" onPress={primaryButtonOnPress}>
+              {primaryButtonlabel}
             </Button>
           </View>
         </View>
@@ -81,7 +91,6 @@ const styles = (theme: ThemePropertiesType) =>
       borderRadius: 24,
       paddingHorizontal: 16,
       paddingVertical: 12,
-      maxHeight: 0.5 * height,
     },
     handleStyle: {paddingTop: 12, paddingBottom: 12},
     handleContainer: {
@@ -98,6 +107,7 @@ const styles = (theme: ThemePropertiesType) =>
 
     bodyContainer: {
       marginVertical: 24,
+      maxHeight: 0.5 * height,
     },
     footerContainer: {flexDirection: 'row', justifyContent: 'space-between'},
   });

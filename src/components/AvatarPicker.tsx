@@ -66,14 +66,16 @@ export const AvatarPicker = (props: AvatarPickerPropType) => {
           style={styles(theme).avatarButtonImage}
         />
         {!props.disabled && (
-          <View style={{position: 'absolute', bottom: 0, right: -12}}>
+          <View style={{position: 'absolute', bottom: 0, right: 16}}>
             <View style={styles(theme).avatarButtonPlus}>
-              <PlusIcon color={theme.colors.onPrimary} />
+              <PlusIcon width={16} height={16} color={theme.colors.onPrimary} />
             </View>
           </View>
         )}
       </Pressable>
       <Modal
+        primaryButtonlabel={t('buttons.save', {ns: 'global'})}
+        primaryButtonOnPress={() => setModalVisible(false)}
         heading={t('SetupProfile.subtitle')}
         visible={modalVisible}
         setIsVisible={setModalVisible}>
@@ -93,6 +95,7 @@ export const AvatarPicker = (props: AvatarPickerPropType) => {
                   flex: 1,
                   width: '100%',
                   height: '100%',
+                  borderRadius: 50,
                   resizeMode: 'contain',
                 }}
                 source={image.source}
@@ -111,12 +114,13 @@ const styles = (theme: ThemePropertiesType) =>
       alignSelf: 'center',
       marginBottom: 24,
       backgroundColor: theme.colors.onBackground,
+      borderRadius: 100,
     },
     avatarButtonImage: {
       height: 132,
       width: 132,
       borderWidth: 1,
-      borderRadius: 10,
+      borderRadius: 100,
       borderColor: theme.colors.outline,
       resizeMode: 'contain',
       alignSelf: 'center',
@@ -125,7 +129,7 @@ const styles = (theme: ThemePropertiesType) =>
     avatarButtonPlus: {
       width: 24,
       height: 24,
-      borderRadius: 5,
+      borderRadius: 24,
       backgroundColor: theme.colors.primary,
       borderWidth: 1,
       borderColor: theme.colors.outline,

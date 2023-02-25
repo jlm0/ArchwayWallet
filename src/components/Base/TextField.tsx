@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import {View, TextInput, StyleSheet, TouchableOpacity} from 'react-native';
-import Pressable from './Pressable';
 import RevealIcon from '../../assets/Icons/Reveal.svg';
 import HideIcon from '../../assets/Icons/Hide.svg';
 import {ThemePropertiesType} from '../../types';
 import {useTheme} from '../../themes';
 import {Text} from './Text';
 import {SvgProps} from 'react-native-svg';
+import {Pressable} from './Pressable';
 
 interface Props {
   type: 'filled' | 'outline';
@@ -14,6 +14,7 @@ interface Props {
   label: string;
   placeholder: string;
   LeftIcon?: React.FC<SvgProps>;
+  marginBottom?: string | number;
   onChangeText: (text: string) => void;
 }
 
@@ -23,6 +24,7 @@ export const TextField: React.FC<Props> = ({
   label,
   placeholder,
   LeftIcon,
+  marginBottom,
 }) => {
   const theme = useTheme();
   const [secureTextEntry, setSecureTextEntry] = useState<boolean>(isPassword);
@@ -32,7 +34,7 @@ export const TextField: React.FC<Props> = ({
   };
 
   return (
-    <View style={styles(theme).container}>
+    <View style={[styles(theme).container, {marginBottom}]}>
       <Text
         type="label"
         size="small"
