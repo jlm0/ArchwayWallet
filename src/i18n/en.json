@@ -33,6 +33,17 @@
     "AvatarPicker": {
       "title": "Select an Avatar",
       "subtitle": "Your avatar will allow you easily identify your account."
+    },
+    "AccountTagsSelector": {
+      "label": "Tags",
+      "add": "Add Tag",
+      "modal": {
+        "title": "Configure Tags",
+        "subtitle": "Select a color and enter a name for your account tag.",
+        "colorLabel": "Tag Color",
+        "nameLabel": "Tag Name",
+        "namePlaceholder": "Enter a Name"
+      }
     }
   },
   "global": {

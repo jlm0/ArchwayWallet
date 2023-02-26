@@ -2,11 +2,13 @@ import React, {useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {View, StyleSheet} from 'react-native';
 import {
+  AccountTagsSelector,
   avatarImages,
   AvatarPicker,
   BackButton,
   Background,
   Button,
+  Tag,
   Text,
   TextField,
 } from '../components';
@@ -28,6 +30,7 @@ const SetupProfile = ({navigation, route}: SetupProfileScreenProps) => {
     avatarImages[0],
   );
   const [accountTags, setAccountTags] = useState<string[]>([]);
+  const [tags, setTags] = React.useState<Tag[]>([]);
 
   const handleContinuePress = () => {
     const isAccountNameUnique = !accounts.some(
@@ -101,7 +104,7 @@ const SetupProfile = ({navigation, route}: SetupProfileScreenProps) => {
           onChangeText={setAccountName}
           type={'filled'}
         />
-        {/* <TagsSelector setAccountTags={setAccountTags} /> */}
+        <AccountTagsSelector accountTags={tags} setAccountTags={setTags} />
       </KeyboardAwareScrollView>
       <Button
         disabled={!accountName}
