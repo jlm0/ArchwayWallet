@@ -7,7 +7,9 @@ import {
   AvatarPicker,
   BackButton,
   Background,
+  BottomSheetHDPath,
   Button,
+  Clipboard,
   SeedCreate,
   Tag,
   Text,
@@ -66,10 +68,11 @@ export const SetupdSeedCreate = ({
           marginBottom={16}>
           {t('SetupSeedCreate.subtitle')}
         </Text>
-        <SeedCreate onSeedPhraseChange={setSeedWords} />
-        {/* <Clipboard copyToClipboard={seedWords} /> */}
+        <Clipboard copyToClipboard textToCopy={seedWords}>
+          <SeedCreate onSeedPhraseChange={setSeedWords} />
+        </Clipboard>
       </View>
-      {/* <HDPath handleConfirm={setHdPath}></HDPath> */}
+      <BottomSheetHDPath handleConfirm={setHdPath}></BottomSheetHDPath>
       <Button type="primary" onPress={handleContinuePress}>
         {t('buttons.continue', {ns: 'global'})}
       </Button>

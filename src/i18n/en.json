@@ -53,6 +53,16 @@
         "emptyTagName": "Tag name can't be empty.",
         "existingTagName": "Tag name already used."
       }
+    },
+    "Clipboard": {
+      "success": {
+        "copyTo": "Copied to clipboard.",
+        "copyFrom": "Copied from clipboard."
+      }
+    },
+    "HDPath": {
+      "title": "HD Path",
+      "subtitle": "A wallet uses a derivation path to determine how to extract a particular key from a tree of keys."
     }
   },
   "global": {
