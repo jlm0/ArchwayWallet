@@ -8,7 +8,7 @@ import {Text} from './Text';
 import {SvgProps} from 'react-native-svg';
 import {Pressable} from './Pressable';
 
-interface Props {
+type Props = {
   type: 'filled' | 'outline';
   isPassword?: boolean;
   label: string;
@@ -16,7 +16,10 @@ interface Props {
   LeftIcon?: React.FC<SvgProps>;
   marginBottom?: string | number;
   onChangeText: (text: string) => void;
-}
+  error?: boolean;
+  errorMessage?: string;
+  success?: boolean;
+};
 
 export const TextField: React.FC<Props> = ({
   type,
@@ -26,6 +29,9 @@ export const TextField: React.FC<Props> = ({
   LeftIcon,
   marginBottom,
   onChangeText,
+  error = false,
+  success = false,
+  errorMessage,
 }) => {
   const theme = useTheme();
   const [secureTextEntry, setSecureTextEntry] = useState<boolean>(isPassword);
@@ -50,6 +56,10 @@ export const TextField: React.FC<Props> = ({
           type === 'filled'
             ? styles(theme).filledContainer
             : styles(theme).outlineContainer,
+          error &&
+            !success && {borderWidth: 1, borderColor: theme.colors.error},
+          success &&
+            !error && {borderWidth: 1, borderColor: theme.colors.success},
         ]}>
         {LeftIcon && (
           <LeftIcon
@@ -75,6 +85,15 @@ export const TextField: React.FC<Props> = ({
           </Pressable>
         )}
       </View>
+      {!success && error && errorMessage && (
+        <Text
+          marginTop={8}
+          type="label"
+          size="small"
+          color={theme.colors.error}>
+          {errorMessage}
+        </Text>
+      )}
     </View>
   );
 };
