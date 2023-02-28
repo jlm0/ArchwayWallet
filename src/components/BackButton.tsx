@@ -13,7 +13,12 @@ export const BackButton = ({navigation}: GoBackButtonPropType) => {
   const {t} = useTranslation('global');
 
   return (
-    <Button type="text" onPress={() => navigation.goBack()} Icon={LeftChevron}>
+    <Button
+      type="text"
+      onPress={() => navigation.goBack()}
+      Icon={LeftChevron}
+      alignSelf={'flex-start'}
+      paddingLeft={0}>
       {t('buttons.back', {ns: 'global'})}
     </Button>
   );

@@ -72,9 +72,7 @@ const SetupProfile = ({navigation, route}: SetupProfileScreenProps) => {
         enableOnAndroid
         extraHeight={16}
         contentContainerStyle={{flexGrow: 1}}>
-        <View style={{alignItems: 'flex-start'}}>
-          <BackButton navigation={navigation} />
-        </View>
+        <BackButton navigation={navigation} />
 
         <Text
           textTransform="uppercase"

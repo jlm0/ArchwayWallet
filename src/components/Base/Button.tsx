@@ -13,6 +13,15 @@ export type ButtonPropsType = {
   onPress: () => void;
   disabled?: boolean;
   fullWidth?: boolean;
+  marginTop?: string | number;
+  marginBottom?: string | number;
+  marginLeft?: string | number;
+  marginRight?: string | number;
+  paddingTop?: string | number;
+  paddingBottom?: string | number;
+  paddingLeft?: string | number;
+  paddingRight?: string | number;
+  alignSelf?: 'center' | 'flex-start' | 'flex-end';
 };
 
 export const Button = ({
@@ -22,6 +31,15 @@ export const Button = ({
   onPress,
   disabled = false,
   fullWidth = false,
+  marginTop,
+  marginBottom,
+  marginLeft,
+  marginRight,
+  paddingTop,
+  paddingBottom,
+  paddingLeft,
+  paddingRight,
+  alignSelf,
 }: ButtonPropsType) => {
   const theme = useTheme();
   const [isPressed, setIsPressed] = React.useState(false);
@@ -86,7 +104,21 @@ export const Button = ({
       disabled={disabled}
       onPressIn={() => setIsPressed(true)}
       onPressOut={() => setIsPressed(false)}
-      style={[styles(theme).button, buttonStyle]}
+      style={[
+        styles(theme).button,
+        buttonStyle,
+        {
+          alignSelf,
+          marginTop,
+          marginBottom,
+          marginLeft,
+          marginRight,
+          paddingTop,
+          paddingBottom,
+          paddingLeft,
+          paddingRight,
+        },
+      ]}
       onPress={onPress}>
       {Icon && (
         <Icon
