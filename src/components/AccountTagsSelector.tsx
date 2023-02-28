@@ -48,12 +48,12 @@ export const AccountTagsSelector = ({
   const handleTagSave = () => {
     if (!tagName) {
       setErrorMessage(t('AccountTagsSelector.error.emptyTagName'));
-      setTimeout(() => setErrorMessage(''), 1500);
+      setTimeout(() => setErrorMessage(''), 2000);
       return;
     }
     if (accountTags.find(tag => tag.name === tagName)) {
       setErrorMessage(t('AccountTagsSelector.error.existingTagName'));
-      setTimeout(() => setErrorMessage(''), 1500);
+      setTimeout(() => setErrorMessage(''), 2000);
       return;
     }
     let newTags = [...accountTags];

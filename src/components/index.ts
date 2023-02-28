@@ -5,3 +5,5 @@ export * from './Background';
 export * from './AvatarPicker';
 export * from './AccountTagsSelector';
 export * from './SeedCreate';
+export * from './Clipboard';
+export * from './BottomSheetHDPath';

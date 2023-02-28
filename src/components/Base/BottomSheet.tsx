@@ -8,10 +8,10 @@ import {
 } from '@gorhom/bottom-sheet';
 import Close from '../../assets/Icons/Close.svg';
 import {BottomSheetModalMethods} from '@gorhom/bottom-sheet/lib/typescript/types';
-import Pressable from './Pressable';
 import {ThemePropertiesType} from '../../types';
 import {Text} from './Text';
 import {Button} from './Button';
+import {Pressable} from './Pressable';
 
 export type BottomSheetPropType = {
   bottomSheetModalRef: React.RefObject<BottomSheetModalMethods>;
@@ -87,16 +87,23 @@ export const BottomSheet = (props: BottomSheetPropType) => {
         </BottomSheetScrollView>
         <View style={styles(theme).footerContainer}>
           {props.secondaryButtonLabel && props.secondaryButtonOnPress && (
+            <View style={{flex: 1, marginRight: 8}}>
+              <Button
+                fullWidth
+                type="outline"
+                onPress={props.secondaryButtonOnPress}>
+                {props.secondaryButtonLabel}
+              </Button>
+            </View>
+          )}
+          <View style={{flex: 1}}>
             <Button
               fullWidth
-              type="outline"
-              onPress={props.secondaryButtonOnPress}>
-              {props.secondaryButtonLabel}
+              type="primary"
+              onPress={props.primaryButtonOnPress}>
+              {props.primaryButtonlabel}
             </Button>
-          )}
-          <Button fullWidth type="primary" onPress={props.primaryButtonOnPress}>
-            {props.primaryButtonlabel}
-          </Button>
+          </View>
         </View>
       </View>
     </BottomSheetModal>
