@@ -1,30 +1,18 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {useTranslation} from 'react-i18next';
-import {View, StyleSheet} from 'react-native';
+import {View} from 'react-native';
 import {
-  AccountTagsSelector,
-  avatarImages,
-  AvatarPicker,
   BackButton,
   Background,
   BottomSheetHDPath,
   Button,
   Clipboard,
   SeedCreate,
-  Tag,
   Text,
-  TextField,
 } from '../components';
-import {useAppSelector} from '../redux';
+
 import {useTheme} from '../themes';
-import {
-  AvatarImageType,
-  HDPathType,
-  SetupProfileScreenProps,
-  SetupSeedCreateScreenProps,
-  ThemePropertiesType,
-} from '../types';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import {HDPathType, SetupSeedCreateScreenProps} from '../types';
 
 export const SetupdSeedCreate = ({
   navigation,
@@ -33,8 +21,8 @@ export const SetupdSeedCreate = ({
   const {t} = useTranslation();
   const theme = useTheme();
 
-  const [seedWords, setSeedWords] = useState('');
-  const [hdPath, setHdPath] = useState<HDPathType>({
+  const [seedWords, setSeedWords] = React.useState('');
+  const [hdPath, setHdPath] = React.useState<HDPathType>({
     account: 0,
     change: 0,
     index: 0,
