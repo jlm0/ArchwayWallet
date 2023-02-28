@@ -34,7 +34,11 @@
       "title": "Your New Seed Phrase",
       "subtitle": "Also known as 'recovery phrase', the seed phrase will allow for recovery of your wallet. Please store it away safely."
     },
-
+    "SetupSeedConfirm": {
+      "title": "Confirm Your Seed Phrase",
+      "subtitle": "Select the missing words in the correct order.",
+      "error": "Incorrect Seed Phrase order. Please try again."
+    },
     "AvatarPicker": {
       "title": "Select an Avatar",
       "subtitle": "Your avatar will allow you easily identify your account."

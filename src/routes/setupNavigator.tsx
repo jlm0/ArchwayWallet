@@ -5,6 +5,7 @@ import {useAppSelector} from '../redux';
 import {SetupOnboard} from '../screens';
 import {SetupOptions} from '../screens/SetupOptions';
 import SetupProfile from '../screens/SetupProfile';
+import {SetupSeedConfirm} from '../screens/SetupSeedConfirm';
 import {SetupdSeedCreate} from '../screens/SetupSeedCreate';
 import {SetupNavigatorType} from '../types';
 
@@ -22,7 +23,7 @@ export const SetupNavigator = () => {
       <SetupStack.Screen name="SetupOptions" component={SetupOptions} />
       <SetupStack.Screen name="SetupProfile" component={SetupProfile} />
       <SetupStack.Screen name="SetupSeedCreate" component={SetupdSeedCreate} />
-      <SetupStack.Screen name="SetupSeedConfirm" component={Placeholder} />
+      <SetupStack.Screen name="SetupSeedConfirm" component={SetupSeedConfirm} />
       <SetupStack.Screen name="SetupSeedImport" component={Placeholder} />
       <SetupStack.Screen name="SetupSecurity" component={Placeholder} />
       <SetupStack.Screen name="SetupSuccess" component={Placeholder} />
