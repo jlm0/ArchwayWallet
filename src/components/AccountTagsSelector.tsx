@@ -6,12 +6,6 @@ import {ThemePropertiesType} from '../types';
 import {Modal, Pressable, Text, TextField} from './Base';
 import PlusIcon from '../assets/Icons/Plus.svg';
 import Close from '../assets/Icons/Close.svg';
-import ColorPicker, {
-  Swatches,
-  Preview,
-  OpacitySlider,
-  HueSlider,
-} from 'reanimated-color-picker';
 
 export type Tag = {
   color: string;
@@ -45,7 +39,7 @@ export const AccountTagsSelector = ({
     currentTag ? currentTag.color : colors[0],
   );
 
-  const [missingName, setMissingName] = React.useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = React.useState<string>('');
 
   const [tagName, setTagName] = React.useState<string>(
     currentTag ? currentTag.name : '',
@@ -53,8 +47,13 @@ export const AccountTagsSelector = ({
 
   const handleTagSave = () => {
     if (!tagName) {
-      setMissingName(true);
-      setTimeout(() => setMissingName(false), 1500);
+      setErrorMessage(t('AccountTagsSelector.error.emptyTagName'));
+      setTimeout(() => setErrorMessage(''), 1500);
+      return;
+    }
+    if (accountTags.find(tag => tag.name === tagName)) {
+      setErrorMessage(t('AccountTagsSelector.error.existingTagName'));
+      setTimeout(() => setErrorMessage(''), 1500);
       return;
     }
     let newTags = [...accountTags];
@@ -131,9 +130,9 @@ export const AccountTagsSelector = ({
           </View>
         </View>
         <TextField
-          error={missingName}
-          success={tagName != ''}
-          errorMessage={'Missing tag name'}
+          error={errorMessage != ''}
+          success={tagName != '' && !errorMessage}
+          errorMessage={errorMessage}
           marginBottom={16}
           label={t('AccountTagsSelector.modal.nameLabel')}
           placeholder={t('AccountTagsSelector.modal.namePlaceholder')}

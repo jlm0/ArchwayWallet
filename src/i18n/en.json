@@ -43,6 +43,10 @@
         "colorLabel": "Tag Color",
         "nameLabel": "Tag Name",
         "namePlaceholder": "Enter a Name"
+      },
+      "error": {
+        "emptyTagName": "Tag name can't be empty.",
+        "existingTagName": "Tag name already used."
       }
     }
   },
