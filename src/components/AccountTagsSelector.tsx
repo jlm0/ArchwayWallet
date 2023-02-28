@@ -45,12 +45,16 @@ export const AccountTagsSelector = ({
     currentTag ? currentTag.color : colors[0],
   );
 
+  const [missingName, setMissingName] = React.useState<boolean>(false);
+
   const [tagName, setTagName] = React.useState<string>(
     currentTag ? currentTag.name : '',
   );
 
   const handleTagSave = () => {
     if (!tagName) {
+      setMissingName(true);
+      setTimeout(() => setMissingName(false), 1500);
       return;
     }
     let newTags = [...accountTags];
@@ -63,6 +67,7 @@ export const AccountTagsSelector = ({
 
   const handleTagRemove = (name: string) => {
     const newTags = accountTags.filter(tag => tag.name !== name);
+
     setAccountTags(newTags);
   };
 
@@ -76,8 +81,7 @@ export const AccountTagsSelector = ({
         textAlign="left">
         {t('AccountTagsSelector.label')}
       </Text>
-      <View
-        style={{flexDirection: 'row', flexWrap: 'wrap', alignSelf: 'stretch'}}>
+      <View style={styles(theme).tagContainer}>
         {accountTags.length != 0 &&
           accountTags.map((tag, i) => (
             <Pressable
@@ -127,6 +131,9 @@ export const AccountTagsSelector = ({
           </View>
         </View>
         <TextField
+          error={missingName}
+          success={tagName != ''}
+          errorMessage={'Missing tag name'}
           marginBottom={16}
           label={t('AccountTagsSelector.modal.nameLabel')}
           placeholder={t('AccountTagsSelector.modal.namePlaceholder')}
@@ -161,6 +168,11 @@ export const AccountTagsSelector = ({
 
 const styles = (theme: ThemePropertiesType) =>
   StyleSheet.create({
+    tagContainer: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      alignSelf: 'stretch',
+    },
     tag: {
       paddingHorizontal: 12,
       paddingVertical: 8,
