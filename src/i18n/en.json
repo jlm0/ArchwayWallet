@@ -30,6 +30,11 @@
         "placeholder": "Enter a Name"
       }
     },
+    "SetupSeedCreate": {
+      "title": "Your New Seed Phrase",
+      "subtitle": "Also known as 'recovery phrase', the seed phrase will allow for recovery of your wallet. Please store it away safely."
+    },
+
     "AvatarPicker": {
       "title": "Select an Avatar",
       "subtitle": "Your avatar will allow you easily identify your account."

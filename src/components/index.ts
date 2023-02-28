@@ -4,3 +4,4 @@ export * from './BackButton';
 export * from './Background';
 export * from './AvatarPicker';
 export * from './AccountTagsSelector';
+export * from './SeedCreate';
