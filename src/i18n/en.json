@@ -54,13 +54,28 @@
       "terms": {
         "prefix": "I AGREE to the",
         "suffix": "Terms and Conditions"
-      },
-      "loading": "Hang tight we're building your wallet!"
+      }
     },
     "SetupSuccess": {
       "title": "Success!",
       "subtitle": "Your new account has been created.",
       "button": "Go to Wallet."
+    },
+    "AppLogin": {
+      "biometric": {
+        "title": "Biometric Authentication",
+        "subtitle": "Confirm biometric to login.",
+        "tap": "Tap to Scan"
+      },
+      "title": "Welcome Back!",
+      "subtitle": "Login via biometric or password.",
+      "button": "Login",
+      "error": "Wrong password",
+      "biometricError": "Biometric Authentication failed. Try using password.",
+      "switch": {
+        "biometric": "Switch to Biometric Login",
+        "password": "Switch to Password Login"
+      }
     },
     "AvatarPicker": {
       "title": "Select an Avatar",
@@ -125,6 +140,7 @@
     "biometric": {
       "enable": "Enable Biometric",
       "disable": "Disable Biometric"
-    }
+    },
+    "loading": "Hang tight we're building your wallet!"
   }
 }

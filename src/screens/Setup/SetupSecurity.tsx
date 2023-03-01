@@ -213,7 +213,7 @@ export const SetupSecurity = ({
             style={{marginBottom: 16}}
           />
           <Text type="label" size="large" color={theme.colors.onBackground}>
-            {t('SetupSecurity.loading')}
+            {t('loading', {ns: 'global'})}
           </Text>
         </View>
       ) : (

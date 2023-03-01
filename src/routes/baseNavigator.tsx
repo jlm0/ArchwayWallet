@@ -5,6 +5,7 @@ import {useAppSelector} from '../redux';
 import {Placeholder} from '../components';
 import {SetupNavigator} from './setupNavigator';
 import {DrawerNavigator} from './drawerNavigator';
+import {AppLogin} from '../screens';
 
 const BaseStack = createStackNavigator<BaseNavigatorType>();
 
@@ -16,7 +17,7 @@ export const BaseNavigator = () => {
   return (
     <BaseStack.Navigator id="BaseStack" screenOptions={{headerShown: false}}>
       {accounts.length != 0 && !isLoggedIn && (
-        <BaseStack.Screen name="AppLogin" component={Placeholder} />
+        <BaseStack.Screen name="AppLogin" component={AppLogin} />
       )}
       {accounts.length != 0 && isLoggedIn && (
         <BaseStack.Group>

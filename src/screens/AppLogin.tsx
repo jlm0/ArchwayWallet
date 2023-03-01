@@ -1,20 +1,36 @@
 import React from 'react';
-import {View, Text, StyleSheet, ActivityIndicator} from 'react-native';
+import {useTranslation} from 'react-i18next';
+import {View, StyleSheet, ActivityIndicator} from 'react-native';
+import {Background, Button, Pressable, Text, TextField} from '../components';
+import {setIsLoggedIn, useAppDispatch, useAppSelector} from '../redux';
+import {useTheme} from '../themes';
+import {
+  base64ToUint8,
+  createPBKDF2Key,
+  getKeyChainKey,
+  uint8ToBase64,
+  uInt8ToBuffer,
+} from '../utils';
+import FingerprintIcon from '../assets/Icons/Fingerprint.svg';
+import {ThemePropertiesType} from '../types';
 
-const AppLogin = () => {
+export const AppLogin = () => {
   const {t} = useTranslation();
   const theme = useTheme();
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const {isBiometricEnabled, appPswHash, appEncryptionKeySettings} =
     useAppSelector(state => state.appSettings);
   const {accounts} = useAppSelector(state => state.userData);
 
-  const [password, setPassword] = useState<string>('');
-  const [usePassword, setUsePassword] = useState<boolean>(!isBiometricEnabled);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [password, setPassword] = React.useState<string>('');
+  const [passwordError, setPasswordError] = React.useState<string>('');
+  const [usePassword, setUsePassword] = React.useState<boolean>(
+    !isBiometricEnabled,
+  );
+  const [isLoading, setIsLoading] = React.useState<boolean>(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     setTimeout(biometricLogin);
   }, []);
 
@@ -24,9 +40,9 @@ const AppLogin = () => {
     }
     try {
       let key = await getKeyChainKey(
-        t('Login.biometric.title'),
-        t('Login.biometric.subtitle'),
-        t('cancel', {ns: 'global'}),
+        t('AppLogin.biometric.title'),
+        t('AppLogin.biometric.subtitle'),
+        t('buttons.cancel', {ns: 'global'}),
       );
       if (!key) {
         return;
@@ -98,39 +114,41 @@ const AppLogin = () => {
     <Background>
       {isLoading ? (
         <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-          <ActivityIndicator color={theme.primaryAccent} size={96} />
-          <Text
-            style={{
-              color: theme.darkBackgroundText,
-              fontSize: 16,
-              lineHeight: 16,
-              fontFamily: theme.bodyFontFamily,
-              marginTop: 16,
-            }}>
-            Setting things up...
+          <ActivityIndicator color={theme.colors.primary} size={96} />
+          <Text type="label" size="large" color={theme.colors.onBackground}>
+            {t('loading', {ns: 'global'})}
           </Text>
         </View>
       ) : (
         <>
           <View style={{marginTop: 24}}>
-            <Logo
-              style={{alignSelf: 'center', marginBottom: 24}}
-              color={theme.appLogo}
-            />
             <View style={{marginBottom: 24}}>
-              <Title style={{fontSize: theme.title2FontSize}}>
-                Get Signed In
-              </Title>
-              <Subtitle>
-                Welcome back! Login via biometric or password.
-              </Subtitle>
+              <Text
+                textTransform="uppercase"
+                type="headline"
+                size="medium"
+                color={theme.colors.onBackground}
+                marginBottom={16}>
+                {t('AppLogin.title')}
+              </Text>
+              <Text
+                type="title"
+                size="small"
+                color={theme.colors.onBackground}
+                marginBottom={16}>
+                {t('AppLogin.subtitle')}
+              </Text>
             </View>
             {usePassword && (
-              <Input
+              <TextField
                 isSensitive
+                type="filled"
                 label={t('password.password', {ns: 'global'})}
-                onChangeText={text => setPassword(text)}
                 placeholder={t('password.enter', {ns: 'global'})}
+                onChangeText={setPassword}
+                marginBottom={16}
+                error={passwordError != ''}
+                errorMessage={passwordError}
               />
             )}
 
@@ -138,39 +156,39 @@ const AppLogin = () => {
               <Pressable
                 onPress={biometricLogin}
                 style={{alignItems: 'center', marginTop: 32}}>
-                <Fingerprint
+                <FingerprintIcon
                   height={80}
                   width={80}
-                  color={theme.darkBackgroundText}
+                  color={theme.colors.onBackground}
                 />
-                <Text style={styles(theme).biometricText}>Tap to Scan</Text>
+                <Text
+                  type="label"
+                  size="medium"
+                  color={theme.colors.onBackground}>
+                  {t('AppLogin.biometric.tap')}
+                </Text>
               </Pressable>
             )}
 
             {usePassword ? (
               isBiometricEnabled && (
-                <Pressable
-                  style={{marginTop: 32}}
-                  onPress={() => setUsePassword(false)}>
-                  <Text style={styles(theme).optionsText}>
-                    Switch to Biometric Login
-                  </Text>
-                </Pressable>
+                <Button type="text" onPress={() => setUsePassword(false)}>
+                  {t('AppLogin.switch.biometric')}
+                </Button>
               )
             ) : (
-              <Pressable
-                style={{marginTop: 32}}
-                onPress={() => setUsePassword(true)}>
-                <Text style={styles(theme).optionsText}>
-                  Switch to Password Login
-                </Text>
-              </Pressable>
+              <Button type="text" onPress={() => setUsePassword(true)}>
+                {t('AppLogin.switch.password')}
+              </Button>
             )}
           </View>
           {usePassword && (
-            <PrimaryButton isDisabled={password === ''} onPress={passwordLogin}>
-              {t('Login.button')}
-            </PrimaryButton>
+            <Button
+              type="primary"
+              disabled={password === ''}
+              onPress={passwordLogin}>
+              {t('AppLogin.button')}
+            </Button>
           )}
         </>
       )}
@@ -178,18 +196,4 @@ const AppLogin = () => {
   );
 };
 
-const styles = (theme: ThemePropertiesTypes) =>
-  StyleSheet.create({
-    biometricText: {
-      marginTop: 8,
-      fontSize: theme.bodyFontSize,
-      fontFamily: theme.bodyFontFamily,
-      color: theme.darkBackgroundText,
-    },
-    optionsText: {
-      textAlign: 'center',
-      fontSize: theme.bodyFontSize,
-      fontFamily: theme.titleFontFamily,
-      color: theme.darkBackgroundText,
-    },
-  });
+const styles = (theme: ThemePropertiesType) => StyleSheet.create({});
