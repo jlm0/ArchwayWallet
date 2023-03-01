@@ -4,7 +4,6 @@ import {useTranslation} from 'react-i18next';
 import {useTheme} from '../themes';
 import CopyPaste from '@react-native-clipboard/clipboard';
 import {Pressable} from './Base/Pressable';
-import ClipboardIcon from '../../assets/Icons/Clipboard.svg';
 import {StyleSheet} from 'react-native';
 import {ThemePropertiesType} from '../types';
 import {Text} from './Base/Text';

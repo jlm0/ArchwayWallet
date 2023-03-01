@@ -19,7 +19,7 @@ export const SeedConfirm = ({seed, onConfirm}: SeedConfirmProps) => {
     seed.map(seedWord => (randomSample.includes(seedWord) ? '' : seedWord)),
   );
 
-  console.log(seed, randomSample, mockSeed);
+  console.log(seed);
 
   const updateTempSeed = (seedWord: string) => {
     const tempSeed = [...mockSeed];

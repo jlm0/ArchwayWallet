@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, TextInput, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, TextInput, StyleSheet, Keyboard} from 'react-native';
 import RevealIcon from '../../assets/Icons/Reveal.svg';
 import HideIcon from '../../assets/Icons/Hide.svg';
 import {ThemePropertiesType} from '../../types';
@@ -10,20 +10,23 @@ import {Pressable} from './Pressable';
 
 type Props = {
   type: 'filled' | 'outline';
-  isPassword?: boolean;
+  isSensitive?: boolean;
+  defaultValue?: string;
+  multiline?: boolean;
   label: string;
   placeholder: string;
   LeftIcon?: React.FC<SvgProps>;
-  marginBottom?: string | number;
-  onChangeText: (text: string) => void;
   error?: boolean;
   errorMessage?: string;
   success?: boolean;
+  marginBottom?: string | number;
+  onBlur?: () => void;
+  onChangeText: (text: string) => void;
 };
 
 export const TextField: React.FC<Props> = ({
   type,
-  isPassword = false,
+  isSensitive = false,
   label,
   placeholder,
   LeftIcon,
@@ -32,9 +35,26 @@ export const TextField: React.FC<Props> = ({
   error = false,
   success = false,
   errorMessage,
+  defaultValue,
+  multiline = false,
+  onBlur,
 }) => {
   const theme = useTheme();
-  const [secureTextEntry, setSecureTextEntry] = useState<boolean>(isPassword);
+  const [secureTextEntry, setSecureTextEntry] = useState<boolean>(isSensitive);
+  const textInputRef = React.useRef<TextInput>(null);
+
+  React.useEffect(() => {
+    const keyboardDidHideListener = Keyboard.addListener(
+      'keyboardDidHide',
+      () => {
+        textInputRef.current?.blur();
+      },
+    );
+
+    return () => {
+      keyboardDidHideListener.remove();
+    };
+  }, []);
 
   const toggleSecureEntry = () => {
     setSecureTextEntry(prev => !prev);
@@ -42,14 +62,16 @@ export const TextField: React.FC<Props> = ({
 
   return (
     <View style={[styles(theme).container, {marginBottom}]}>
-      <Text
-        type="label"
-        size="small"
-        color={theme.colors.onSurfaceVariant}
-        marginBottom={8}
-        textAlign="left">
-        {label}
-      </Text>
+      {label && (
+        <Text
+          type="label"
+          size="small"
+          color={theme.colors.onSurfaceVariant}
+          marginBottom={8}
+          textAlign="left">
+          {label}
+        </Text>
+      )}
       <View
         style={[
           styles(theme).inputContainer,
@@ -68,12 +90,16 @@ export const TextField: React.FC<Props> = ({
           />
         )}
         <TextInput
+          ref={textInputRef}
+          defaultValue={defaultValue}
+          multiline={multiline}
           onChangeText={onChangeText}
           placeholder={placeholder}
           style={[styles(theme).input]}
           secureTextEntry={secureTextEntry}
+          onBlur={() => onBlur && onBlur()}
         />
-        {isPassword && (
+        {isSensitive && (
           <Pressable
             style={styles(theme).passwordIcon}
             onPress={toggleSecureEntry}>

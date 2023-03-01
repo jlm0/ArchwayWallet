@@ -8,3 +8,4 @@ export * from './SeedCreate';
 export * from './Clipboard';
 export * from './BottomSheetHDPath';
 export * from './SeedConfirm';
+export * from './SeedImport';

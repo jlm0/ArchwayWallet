@@ -1,9 +1,8 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import CheckIcon from '../../assets/Icons/Check.svg';
 import {useTheme} from '../../themes';
 import {ThemePropertiesType} from '../../types';
-import Pressable from './Pressable';
+import {Pressable} from './Pressable';
 
 type SwitchProps = {
   initialValue: boolean;
@@ -11,18 +10,18 @@ type SwitchProps = {
 };
 
 export const Switch = ({initialValue, onValueChange}: SwitchProps) => {
-  const [value, setValue] = React.useState(initialValue);
+  const [switched, setSwitched] = React.useState(initialValue);
   const theme = useTheme();
 
   const toggleSwitch = () => {
-    const newValue = !value;
-    setValue(newValue);
+    const newValue = !switched;
+    setSwitched(newValue);
     onValueChange(newValue);
   };
 
   return (
     <>
-      {value ? (
+      {switched ? (
         <Pressable
           onPress={toggleSwitch}
           style={[styles(theme).container, styles(theme).toggledContainer]}>

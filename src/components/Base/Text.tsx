@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text as RNText, StyleSheet} from 'react-native';
+import {Text as RNText} from 'react-native';
 import {useTheme} from '../../themes';
 import {ThemeTypographySize, ThemeTypographyTypes} from '../../types';
 

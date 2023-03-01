@@ -1,4 +1,4 @@
-import {StyleSheet, Text} from 'react-native';
+import {StyleSheet} from 'react-native';
 import LeftChevron from '../assets/Icons/Chevron-Left.svg';
 import {useTranslation} from 'react-i18next';
 import {Button} from '.';
