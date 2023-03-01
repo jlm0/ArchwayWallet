@@ -9,10 +9,10 @@ import {
   Clipboard,
   SeedCreate,
   Text,
-} from '../components';
+} from '../../components';
 
-import {useTheme} from '../themes';
-import {HDPathType, SetupSeedCreateScreenProps} from '../types';
+import {useTheme} from '../../themes';
+import {HDPathType, SetupSeedCreateScreenProps} from '../../types';
 
 export const SetupdSeedCreate = ({
   navigation,

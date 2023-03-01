@@ -11,17 +11,17 @@ import {
   Tag,
   Text,
   TextField,
-} from '../components';
-import {useAppSelector} from '../redux';
-import {useTheme} from '../themes';
+} from '../../components';
+import {useAppSelector} from '../../redux';
+import {useTheme} from '../../themes';
 import {
   AvatarImageType,
   SetupProfileScreenProps,
   ThemePropertiesType,
-} from '../types';
+} from '../../types';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
-const SetupProfile = ({navigation, route}: SetupProfileScreenProps) => {
+export const SetupProfile = ({navigation, route}: SetupProfileScreenProps) => {
   const {t} = useTranslation();
   const theme = useTheme();
   const accounts = useAppSelector(state => state.userData.accounts);
@@ -115,5 +115,3 @@ const SetupProfile = ({navigation, route}: SetupProfileScreenProps) => {
 };
 
 const styles = (theme: ThemePropertiesType) => StyleSheet.create({});
-
-export default SetupProfile;

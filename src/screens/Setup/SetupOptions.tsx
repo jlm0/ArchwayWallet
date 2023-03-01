@@ -1,9 +1,9 @@
 import React from 'react';
 import {Image, View, StyleSheet} from 'react-native';
 import {useTranslation} from 'react-i18next';
-import {SetupOptionsScreenProps, ThemePropertiesType} from '../types';
-import {BackButton, Background, Pressable, Text} from '../components/';
-import {useTheme} from '../themes';
+import {SetupOptionsScreenProps, ThemePropertiesType} from '../../types';
+import {BackButton, Background, Pressable, Text} from '../../components/';
+import {useTheme} from '../../themes';
 
 export const SetupOptions = ({navigation}: SetupOptionsScreenProps) => {
   const {t} = useTranslation('translation', {keyPrefix: 'SetupOptions'});
@@ -66,7 +66,7 @@ export const SetupOptions = ({navigation}: SetupOptionsScreenProps) => {
                 type="label"
                 size="large"
                 color={theme.colors.onSurfaceVariant}>
-                {t('importSeed')}
+                {t('importLedger')}
               </Text>
             </View>
           </Pressable>

@@ -1,9 +1,15 @@
 import React from 'react';
 import {useTranslation} from 'react-i18next';
 import {View} from 'react-native';
-import {BackButton, Background, Button, SeedConfirm, Text} from '../components';
-import {useTheme} from '../themes';
-import {SetupSeedConfirmScreenProps} from '../types';
+import {
+  BackButton,
+  Background,
+  Button,
+  SeedConfirm,
+  Text,
+} from '../../components';
+import {useTheme} from '../../themes';
+import {SetupSeedConfirmScreenProps} from '../../types';
 
 export const SetupSeedConfirm = ({
   navigation,

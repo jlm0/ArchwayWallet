@@ -106,7 +106,7 @@ export type SetupSecurityScreenProps = StackScreenProps<
   SetupNavigatorType,
   'SetupSecurity'
 >;
-export type SetupSuccessScreenProps = StackScreenProps<
-  SetupNavigatorType,
-  'SetupSuccess'
+export type SetupSuccessScreenProps = CompositeScreenProps<
+  StackScreenProps<SetupNavigatorType, 'SetupSuccess'>,
+  BaseNavigatorPropsType
 >;

@@ -1,11 +1,15 @@
 import React from 'react';
 import {useTranslation} from 'react-i18next';
 import {View, StyleSheet, Dimensions, FlatList, Image} from 'react-native';
-import {Button, Text} from '../components';
-import {Background} from '../components/Background';
-import {setAppActiveLanguage, useAppDispatch, useAppSelector} from '../redux';
-import {useTheme} from '../themes';
-import {SetupOnboardScreenProps, ThemePropertiesType} from '../types';
+import {Button, Text} from '../../components';
+import {Background} from '../../components/Background';
+import {
+  setAppActiveLanguage,
+  useAppDispatch,
+  useAppSelector,
+} from '../../redux';
+import {useTheme} from '../../themes';
+import {SetupOnboardScreenProps, ThemePropertiesType} from '../../types';
 
 const {width} = Dimensions.get('window');
 
@@ -14,19 +18,19 @@ const slides = [
     id: 1,
     title: 'slide1.title',
     subtitle: 'slide1.subtitle',
-    image: require('../assets/Illustrations/Onboard1.png'),
+    image: require('../../assets/Illustrations/Onboard1.png'),
   },
   {
     id: 2,
     title: 'slide2.title',
     subtitle: 'slide2.subtitle',
-    image: require('../assets/Illustrations/Onboard2.png'),
+    image: require('../../assets/Illustrations/Onboard2.png'),
   },
   {
     id: 3,
     title: 'slide3.title',
     subtitle: 'slide3.subtitle',
-    image: require('../assets/Illustrations/Onboard3.png'),
+    image: require('../../assets/Illustrations/Onboard3.png'),
   },
 ];
 

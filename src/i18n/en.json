@@ -30,6 +30,13 @@
         "placeholder": "Enter a Name"
       }
     },
+    "SetupSeedImport": {
+      "title": "Import Seed Phrase",
+      "subtitle": "Enter a 12 to 24 word seed phrase.",
+      "placeholder": "Enter a seed phrase.",
+      "button": "Import Seed",
+      "error": "Invalid seed phrase."
+    },
     "SetupSeedCreate": {
       "title": "Your New Seed Phrase",
       "subtitle": "Also known as 'recovery phrase', the seed phrase will allow for recovery of your wallet. Please store it away safely."
@@ -38,6 +45,22 @@
       "title": "Confirm Your Seed Phrase",
       "subtitle": "Select the missing words in the correct order.",
       "error": "Incorrect Seed Phrase order. Please try again."
+    },
+    "SetupSecurity": {
+      "title": "Set Wallet Security",
+      "title2": "Confirm Adding a New Account",
+      "subtitle": "Set a strong password and enable biometrics for  optimal wallet security.",
+      "subtitle2": "Enter a password or use biometric to confirm adding a new account.",
+      "terms": {
+        "prefix": "I AGREE to the",
+        "suffix": "Terms and Conditions"
+      },
+      "loading": "Hang tight we're building your wallet!"
+    },
+    "SetupSuccess": {
+      "title": "Success!",
+      "subtitle": "Your new account has been created.",
+      "button": "Go to Wallet."
     },
     "AvatarPicker": {
       "title": "Select an Avatar",
@@ -81,6 +104,27 @@
       "finish": "Finish",
       "success": "Success",
       "advanced": "Advanced"
+    },
+    "password": {
+      "password": "Password",
+      "confirm": "Confirm Password",
+      "enter": "Enter Password",
+      "success": "Passwords match.",
+      "errors": {
+        "empty": "Empty password field.",
+        "match": "Passwords don't match.",
+        "min": "Password must be at least 8 characters long.",
+        "lowercase": "Password must contain at least one lowercase letter.",
+        "uppercase": "Password must contain at least one uppercase letter.",
+        "digits": "Password must contain at least one number.",
+        "symbols": "Password must contain at least one special character (!@#$%^&*).",
+        "spaces": "Password must not contain any spaces..",
+        "oneOf": "Should not be a common password."
+      }
+    },
+    "biometric": {
+      "enable": "Enable Biometric",
+      "disable": "Disable Biometric"
     }
   }
 }

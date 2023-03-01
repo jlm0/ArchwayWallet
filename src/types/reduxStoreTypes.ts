@@ -1,8 +1,8 @@
 import {appNetworkNames, appThemeNames} from '../constants';
-import {ThemePropertiesType} from './themeTypes';
 import {ImageSourcePropType} from 'react-native';
 import {CustomNetworkSettingsType} from './networkTypes';
 import {SupportedCurrencyType, SupportedLanguageType} from './constantsTypes';
+import {AvatarImageType} from './componentTypes';
 
 export type UserDataStateType = {
   accounts: AccountType[];
@@ -66,7 +66,7 @@ export type AccountType = {
   tags: string[];
   type: AccountCreationType;
   wallet: WalletType;
-  avatar: AvatarImage;
+  avatar: AvatarImageType;
   delegationStatus: 'active' | 'inactive';
   tokens: TokenType[] | null;
 };
@@ -76,7 +76,7 @@ export type AccountCreationType = 'imported' | 'ledger' | 'generated';
 export type AddressBookEntryType = {
   id: string;
   name: string;
-  avatar: AvatarImage;
+  avatar: AvatarImageType;
   address: string;
   memo: string;
   favorite: boolean;
@@ -91,7 +91,7 @@ export type WalletType = {
 };
 
 export type WalletKeysType = {
-  network: (typeof networkNames)[number];
+  network: (typeof appNetworkNames)[number];
   chain_id: string;
   path: HDPathType;
   slip44: number;
@@ -112,7 +112,7 @@ export type EncryptionSettingsType = {
 };
 
 export type WalletAddressType = {
-  network: (typeof networkNames)[number];
+  network: (typeof appNetworkNames)[number];
   chain_id: string;
   type: 'mainnet' | 'testnet';
   prefix: string;
