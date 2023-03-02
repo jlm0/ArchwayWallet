@@ -1,7 +1,7 @@
 import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import TabsNavigator from './tabNavigator';
-import {Placeholder} from '../components';
+import {DrawerHeaderMenu, Placeholder} from '../components';
+import {TabsNavigator} from './tabNavigator';
 
 const DrawerMenu = createDrawerNavigator();
 
@@ -12,7 +12,7 @@ export const DrawerNavigator = () => {
       drawerContent={props => <></>}
       screenOptions={{
         headerShown: true,
-        header: props => <></>,
+        header: props => <DrawerHeaderMenu {...props} />,
         drawerPosition: 'right',
         drawerType: 'front',
         unmountOnBlur: true,

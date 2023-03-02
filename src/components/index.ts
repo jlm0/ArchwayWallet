@@ -9,3 +9,5 @@ export * from './Clipboard';
 export * from './BottomSheetHDPath';
 export * from './SeedConfirm';
 export * from './SeedImport';
+export * from './DrawerHeaderMenu';
+export * from './BottomSheetNetworkPicker';
