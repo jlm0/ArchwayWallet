@@ -1,10 +1,10 @@
 import React from 'react';
-import {Text as RNText} from 'react-native';
+import {Text as RNText, TextProps as props} from 'react-native';
 import {useTheme} from '../../themes';
 import {ThemeTypographySize, ThemeTypographyTypes} from '../../types';
 
 type TextProps = {
-  children: string;
+  children: React.ReactNode;
   color: string;
   type: ThemeTypographyTypes[number];
   size: ThemeTypographySize[number];
