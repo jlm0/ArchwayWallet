@@ -1,7 +1,7 @@
 import React from 'react';
 import {useTranslation} from 'react-i18next';
 
-import AccountSuccess from '../../assets/Illustrations/accountSuccess.svg';
+import AccountSuccess from '../../assets/Illustrations/AccountSuccess.svg';
 import {BackHandler, View} from 'react-native';
 import {useTheme} from '../../themes';
 import {SetupSuccessScreenProps} from '../../types';
